@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Admin List</title>
+    <link rel="stylesheet" href="static/style1.css">
+    <style>
+        table {
+          position: relative;
+          left:90px;
+          top:10px;
+          align-content: center;
+          border: 4px solid black;
+          width:550px;
+          height: 250px;
+          border-collapse: collapse;
+        }
+        th{
+          align-content: center;
+          border: 4px solid black;
+          width:4000px;
+          height: 50px;
+          text-align: center;
+        }
+        td{
+          border: 4px solid black;
+          height: 50px;
+          width:700px;
+          text-align: center;
+        }
+    </style>
+  </head>
+    <body>
+        <div class ="table">
+            <table align="center" style="width:220%">
+                <caption><h3>ADMIN DETAILS</h3></caption>
+            <tr>
+              {% for field in fields %}
+              <th bgcolor="#87CEEB">{{field}}</th>
+              {% endfor %}
+              <th bgcolor="#87CEEB">REMOVE</th>
+              
+
+            </tr>
+            {% for li in lists %}
+            <tr>
+
+              {% for col in li %}
+              <td bgcolor="white">{{col}}</td>
+              {% endfor %}
+              <form action="/delete_admin" method="post">
+                <input type="hidden" name="USER ID" value="{{li[0]}}">
+               <td bgcolor="white"> <button type="submit">DELETE</button></td>
+              </form>
+              
+            </tr>
+            {% endfor %} 
+          </table> 
+        </div>
+    </body>
+</html>

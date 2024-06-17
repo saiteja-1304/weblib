@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Books History</title>
+    <link rel="stylesheet" href="static/style1.css">
+    <style>
+        table {
+          position: relative;
+          left:160px;
+          top:20px;
+          align-content: center;
+          border: 5px solid black;
+          width:250px;
+          height: 150px;
+          border-collapse: collapse;
+          opacity: 0.9;
+        }
+        th{
+          align-content: center;
+          border: 5px solid black;
+          width:3000px;
+          height: 50px;
+          text-align: center;
+        }
+        td{
+          border: 5px solid black;
+          height: 50px;
+          width:300px;
+          text-align: center;
+        }
+        
+        .search
+          {
+          position: relative;
+          left:100px;
+          top: 50px;
+          width:50px;
+          height:30px;
+    
+          }
+          .searchbar
+          {
+            position: relative;
+            left:100px;
+            top: 50px;
+          }
+    </style>
+  </head>
+
+    <body>
+        <div class ="table">
+            <table align="center" style="width:200%">
+                <caption><h3>HISTORY</h3></caption>
+            <tr>
+              {% for field in fields %}
+              <th bgcolor="#87CEEB">{{field}}</th>
+              {% endfor %}
+            </tr>
+            {% for hist in issues %}
+            <tr>
+              {% for col in hist %}
+              <td bgcolor="white">{{col}}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %} 
+          </table> 
+        </div>
+    </body>
+</html>
